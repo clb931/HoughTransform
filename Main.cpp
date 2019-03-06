@@ -23,7 +23,7 @@ void RenderHoughTransform() {
 			if (source_pixels[i] != 0) {
 				for (int a = 0; a < 180; ++a) {
 					int p = (x * cosf(a-90)) + (y * sinf(a-90));
-					int j = a + p * 500;
+					int j = p + a * 500;
 					if (j > 0) {
 						int val = (hough_pixels[j] & 0xFF) + 255;
 						hough_pixels[j] = (val << 16) | (val << 8) | val;
